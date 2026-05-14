@@ -1,0 +1,27 @@
+
+<h2>Dashboard</h2>
+<a href="/add/">Add Expense</a>
+<a href="/download/">Download Report</a>
+<a href="/logout/">Logout</a>
+
+<h3>Total Expense: {{total}}</h3>
+
+<table border="1">
+<tr>
+<th>Description</th>
+<th>Amount</th>
+<th>Category</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+
+{% for e in expenses %}
+<tr>
+<td>{{e.description}}</td>
+<td>{{e.amount}}</td>
+<td>{{e.category}}</td>
+<td>{{e.date}}</td>
+<td><a href="/delete/{{e.id}}/">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
